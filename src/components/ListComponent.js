@@ -1,21 +1,25 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
 import { Link } from 'react-router'
+import EditIcon from './EditIcon'
+import TrashIcon from './TrashIcon'
+import { connect } from 'react-redux'
+import { deleteMerchantAction } from '../actions'
 
-const ListComponent = ({ items }) => (
-  <Table responsive>
+const ListComponent = ({ items, dispatch }) => (
+  <Table responsive striped>        
     <thead>
       <tr>
         <th>#</th>
         <th>Name</th>
-        <th>Test</th>
-        <th>Test</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </tr>
     </thead>
-    <tbody>
-      {items.toJS().map((item, i) => (<tr key={i}><td>{item.id}</td><td><Link to={`/view/${item.id}`}>{item.firstName} {item.lastName}</Link> </td><td><Link to="/edit/{}"> Edit</Link></td><td></td></tr>))}
+    <tbody>          
+      {items.map((item, i) => (<tr key={i}><td><img className="round" src={item.avatarUrl}/></td><td><Link to={`/view/${item.id}`}>{item.firstName} {item.lastName}</Link> </td><td>  <Link to={`/edit/${item.id}`}> <EditIcon /></Link></td><td><a onClick={() => dispatch(deleteMerchantAction(item))}><TrashIcon /></a></td></tr>))}
     </tbody>
   </Table>
 )
 
-export default ListComponent
+export default connect()(ListComponent)

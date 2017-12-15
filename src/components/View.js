@@ -8,8 +8,8 @@ import { Field, reduxForm } from 'redux-form'
 import { fromJS } from 'immutable'
 
 const singleMerchantSelector = createSelector(
-  state => state.toJS(),
-  (substate) => { return substate.singleMerchant }
+  state => state.main.singleMerchant,
+  (substate) => { return substate }
 )
 
 const mapStateToProps = state => ({

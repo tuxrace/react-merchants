@@ -1,47 +1,29 @@
 module.exports = [
-  {id: 1, firstName:'John', lastName:'Will', 
+  {id: Math.random().toString(36).substr(2,9), firstName:'John', lastName:'Will', avatarUrl:'https://randomuser.me/api/portraits/thumb/men/1.jpg', email:'test@mail.com',
     bids:[ 
       {id:1, carTitle:'Nissan', amount:10000, created: new Date('2017-10-17T08:00:00')},
       {id:2, carTitle:'Honda', amount:20000, created: new Date('2017-05-21T08:00:00')} 
     ]
   },
-  {id: 2, firstName:'Tom', lastName:'Sawyer',
+  {id: Math.random().toString(36).substr(2,9), firstName:'Tom', lastName:'Sawyer', avatarUrl:'https://randomuser.me/api/portraits/thumb/men/2.jpg', email:'test@mail.com',
     bids:[ 
       {id:1, carTitle:'Nissan', amount:10000, created: new Date('2017-10-17T08:00:00')},
       {id:2, carTitle:'Honda', amount:20000, created: new Date('2017-05-21T08:00:00')} 
     ]
   },
-  {id: 3, firstName:'Lebron', lastName:'James',
+  {id: Math.random().toString(36).substr(2,9), firstName:'Lebron', lastName:'James', avatarUrl:'https://randomuser.me/api/portraits/thumb/men/3.jpg', email:'test@mail.com',
     bids:[ 
       {id:1, carTitle:'Nissan', amount:10000, created: new Date('2017-10-17T08:00:00')},
       {id:2, carTitle:'Honda', amount:20000, created: new Date('2017-05-21T08:00:00')} 
     ]
   },
-  {id: 4, firstName:'Lonzo', lastName:'Ball',
+  {id: Math.random().toString(36).substr(2,9), firstName:'Lonzo', lastName:'Ball', avatarUrl:'https://randomuser.me/api/portraits/thumb/men/4.jpg', email:'test@mail.com',
     bids:[ 
       {id:1, carTitle:'Nissan', amount:10000, created: new Date('2017-10-17T08:00:00')},
       {id:2, carTitle:'Honda', amount:20000, created: new Date('2017-05-21T08:00:00')} 
     ]
   },
-  {id: 5, firstName:'Kyrie', lastName:'Irving',
-    bids:[ 
-      {id:1, carTitle:'Nissan', amount:10000, created: new Date('2017-10-17T08:00:00')},
-      {id:2, carTitle:'Honda', amount:20000, created: new Date('2017-05-21T08:00:00')} 
-    ]
-  },
-  {id: 6, firstName:'Kevin', lastName:'Durant',
-    bids:[ 
-      {id:1, carTitle:'Nissan', amount:10000, created: new Date('2017-10-17T08:00:00')},
-      {id:2, carTitle:'Honda', amount:20000, created: new Date('2017-05-21T08:00:00')} 
-    ]
-  },
-  {id: 7, firstName:'Dwane', lastName:'Wade',
-    bids:[ 
-      {id:1, carTitle:'Nissan', amount:10000, created: new Date('2017-10-17T08:00:00')},
-      {id:2, carTitle:'Honda', amount:20000, created: new Date('2017-05-21T08:00:00')} 
-    ]
-  },
-  {id: 8, firstName:'James', lastName:'Harden',
+  {id: Math.random().toString(36).substr(2,9), firstName:'Kyrie', lastName:'Irving', avatarUrl:'https://randomuser.me/api/portraits/thumb/men/5.jpg', email:'test@mail.com',
     bids:[ 
       {id:1, carTitle:'Nissan', amount:10000, created: new Date('2017-10-17T08:00:00')},
       {id:2, carTitle:'Honda', amount:20000, created: new Date('2017-05-21T08:00:00')} 

@@ -7,7 +7,7 @@ const navbarInstance = () => (
   <Navbar inverse collapseOnSelect fixedTop>
     <Navbar.Header>
       <Navbar.Brand>
-        <a href="#"><Icon /> Merchants App</a>
+        <a href="/"><Icon /> Merchants App</a>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>

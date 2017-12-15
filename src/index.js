@@ -5,31 +5,21 @@ import Merchants from './components/Merchants'
 import Add from './components/Add'
 import Edit from './components/Edit'
 import View from './components/View'
-import { createStore, applyMiddleware  } from 'redux'
+import { createStore, applyMiddleware, combineReducers  } from 'redux'
 import { Provider, connect } from 'react-redux'
 import { fromJS, set } from 'immutable'
+import { reducer as formReducer } from 'redux-form'
 import 'babel-polyfill'
 import createSagaMiddleware from 'redux-saga'
 import sagas from './sagas'
-const mockData = require('../mockData')
-import './style.css'
+import main from './reducers'
+import './style.scss'
 
-const initialState = fromJS({
-  merchants: mockData,
-  singleMerchant:null
-})
-
-const reducer = (state = initialState, action) => {
-  console.log('kk---', action.payload)
-  switch (action.type) {    
-    case 'LOAD_MERCHANT_DONE':
-      return state.set('singleMerchant',action.payload)
-    case 'ADD_MERCHANT':
-      return state.set('merchants', state.get('merchant').concat(action.payload))  
-    default:
-      return state
-  }
+const reducers = {
+  form: formReducer,
+  main
 }
+const reducer = combineReducers(reducers)
 
 const sagaMiddleware = createSagaMiddleware()
 const store = createStore(reducer, applyMiddleware(sagaMiddleware))
