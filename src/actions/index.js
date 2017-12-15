@@ -13,3 +13,7 @@ export const newMerchantAction = (payload) => {
 export const deleteMerchantAction = (payload) => {    
   return { type: 'DELETE_MERCHANT', payload } 
 }
+
+export const editMerchantAction = (payload) => {    
+  return { type: 'DELETE_MERCHANT', payload } 
+}

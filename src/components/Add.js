@@ -5,12 +5,12 @@ import { Field, reduxForm } from 'redux-form'
 import { newMerchantAction } from '../actions'
 import { connect } from 'react-redux'
 
-function submitForm(data, dispatch){
+function submitForm(data, dispatch) {
   dispatch(newMerchantAction(data))
 }
 
 const Main = ({ handleSubmit, pristine, reset, submitting, dispatch }) => (
-  <div>    
+  <div>
     <NavComponent />
     <Grid>
       <Row className="show-grid">
@@ -36,7 +36,7 @@ const Main = ({ handleSubmit, pristine, reset, submitting, dispatch }) => (
                     name="lastName"
                     component="input"
                     type="text"
-                    placeholder=""                  />
+                    placeholder="" />
                 </div>
               </div>
               <br />
@@ -59,7 +59,7 @@ const Main = ({ handleSubmit, pristine, reset, submitting, dispatch }) => (
                     name="email"
                     component="input"
                     type="email"
-                    placeholder=""              />
+                    placeholder="" />
                 </div>
               </div>
               <br />
@@ -70,7 +70,7 @@ const Main = ({ handleSubmit, pristine, reset, submitting, dispatch }) => (
                     name="phone"
                     component="input"
                     type="phone"
-                    placeholder=""              />
+                    placeholder="" />
                 </div>
               </div>
               <br />
@@ -89,11 +89,11 @@ const Main = ({ handleSubmit, pristine, reset, submitting, dispatch }) => (
               <div>
                 <label>Bids</label>
                 <div>
-                  
+
                 </div>
               </div>
               <br />
-              <div>                
+              <div>
                 <button type="submit" disabled={pristine || submitting}>Submit</button>
               </div>
             </form>
@@ -115,5 +115,3 @@ const mapDispatchToProps = dispatch => {
 export default reduxForm({
   form: 'addform'
 })(Main)
-
-// export default connect(mapStateToProps)(rForm)

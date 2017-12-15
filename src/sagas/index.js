@@ -28,8 +28,24 @@ function* loadMerchant ({ payload }) {
   try{     
     const getMerchants = state => JSON.parse(state.main.merchants)
     const merchants = yield select(getMerchants)    
-    const singleMerchant = yield getSingleMerchant(merchants, payload)       
+    const singleMerchant = yield getSingleMerchant(merchants, payload)    
+    console.log(singleMerchant)   
     yield put({type:'LOAD_MERCHANT_DONE', payload: singleMerchant[0]})
+  }catch(e){
+    console.log(e)
+  }    
+}
+
+function* editMerchant ({ payload }) {
+  try{     
+    console.log('dsss')
+    const getMerchants = state => JSON.parse(state.main.merchants)
+    const merchants = yield select(getMerchants)
+    const delIdx = merchants.findIndex(item => item.id === payload.id)
+    const newUpdateData = immutableSplice(merchants, delIdx, 1)    
+    localStorage.setItem('main',JSON.stringify(newUpdateData))
+    yield put({type:'DELETE_MERCHANT_DONE',payload: newUpdateData})
+    window.location.reload()
   }catch(e){
     console.log(e)
   }    
@@ -57,7 +73,6 @@ function* deleteMerchant ({ payload }) {
     const delIdx = merchants.findIndex(item => item.id === payload.id)
     const newUpdateData = immutableSplice(merchants, delIdx, 1)    
     localStorage.setItem('main',JSON.stringify(newUpdateData))
-    // const singleMerchant = yield getSingleMerchant(merchants, payload)       
     yield put({type:'DELETE_MERCHANT_DONE',payload: newUpdateData})
     window.location.reload()
   }catch(e){
@@ -70,6 +85,7 @@ function* saga(){
   yield takeLatest('NEW_MERCHANT', newMerchant);
   yield takeLatest('LOAD_ALL', all);
   yield takeLatest('DELETE_MERCHANT', deleteMerchant);
+  yield takeLatest('EDIT_MERCHANT', editMerchant);
 }
 
 export default saga;

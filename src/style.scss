@@ -1,0 +1,17 @@
+$font: 'Roboto', sans-serif;
+
+body {
+  font-family: $font;
+  padding-top: 70px;
+  height:100vh;
+}
+
+.round{
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;  
+  border:#999 1px solid;
+  height:32px;
+  box-shadow: 2px 2px 2px 2px #ccc;
+}
