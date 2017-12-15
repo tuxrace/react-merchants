@@ -14,7 +14,7 @@ const Main = ({ handleSubmit, pristine, reset, submitting, dispatch }) => (
     <NavComponent />
     <Grid>
       <Row className="show-grid">
-        <Col xs={12} md={12}>
+        <Col xs={12} md={12}>         
           <Panel header={"Add a new merchant"} bsStyle="primary">
             <form onSubmit={handleSubmit(submitForm)}>
               <div>
@@ -80,7 +80,7 @@ const Main = ({ handleSubmit, pristine, reset, submitting, dispatch }) => (
                   <Field
                     name="hasPremium"
                     component="input"
-                    type="radio"
+                    type="checkbox"
                     placeholder=""
                   />
                 </div>

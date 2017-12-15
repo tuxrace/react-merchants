@@ -5,6 +5,7 @@ import { Field, reduxForm } from 'redux-form'
 import * as actionCreators from '../actions'
 import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
+import { Link } from 'react-router'
 
 const singleMerchantSelector = createSelector(
   state => state.main.singleMerchant,
@@ -16,12 +17,12 @@ const mapStateToProps = state => ({
 })
 
 function submitForm(data, dispatch) {
-  dispatch(editMerchantAction(data))
+  dispatch(actionCreators.editMerchantAction(data))
 }
 
 class Main extends Component {
   componentDidMount() {
-    let { dispatch } = this.props
+    let { dispatch } = this.props    
     let action = actionCreators.loadMerchantAction(this.props.routeParams.id)
     dispatch(action)
   }
@@ -33,6 +34,7 @@ class Main extends Component {
         <Grid>
           <Row className="show-grid">
             <Col xs={12} md={12}>
+            <p><Link to="/">Back to main</Link></p>
               <Panel header={"Edit merchant"} bsStyle="primary">
                 <form onSubmit={handleSubmit(submitForm)}>
                   <div>

@@ -21,6 +21,8 @@ const reducer = (state = initialState, action) => {
       return Object.assign({},state, {merchants: action.payload})
     case 'DELETE_MERCHANT_DONE':
       return Object.assign({},state, {merchants: action.payload})
+    case 'EDIT_MERCHANT_DONE':
+      return Object.assign({},state, {merchants: action.payload})
     default:
       return state
   }

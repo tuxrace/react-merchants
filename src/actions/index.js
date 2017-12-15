@@ -15,5 +15,5 @@ export const deleteMerchantAction = (payload) => {
 }
 
 export const editMerchantAction = (payload) => {    
-  return { type: 'DELETE_MERCHANT', payload } 
+  return { type: 'EDIT_MERCHANT', payload } 
 }

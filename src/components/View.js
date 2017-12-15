@@ -6,6 +6,7 @@ import * as actionCreators from '../actions'
 import { createSelector } from 'reselect'
 import { Field, reduxForm } from 'redux-form'
 import { fromJS } from 'immutable'
+import { Link } from 'react-router'
 
 const singleMerchantSelector = createSelector(
   state => state.main.singleMerchant,
@@ -15,6 +16,7 @@ const singleMerchantSelector = createSelector(
 const mapStateToProps = state => ({
   singleMerchant: singleMerchantSelector(state)
 })
+
 
 class View extends Component {
   componentDidMount() {
@@ -30,6 +32,7 @@ class View extends Component {
         <Grid>
           <Row className="show-grid">
             <Col xs={12} md={12}>
+            <p><Link to="/">Back to main</Link></p>
               <Panel header={"Merchant Information"} bsStyle="primary">
                 <Form horizontal>
                   <FormGroup controlId="formHorizontalEmail">
