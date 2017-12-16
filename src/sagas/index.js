@@ -29,7 +29,6 @@ function* loadMerchant ({ payload }) {
     const getMerchants = state => JSON.parse(state.main.merchants)
     const merchants = yield select(getMerchants)    
     const singleMerchant = yield getSingleMerchant(merchants, payload)    
-    console.log(singleMerchant)   
     yield put({type:'LOAD_MERCHANT_DONE', payload: singleMerchant[0]})
   }catch(e){
     console.log(e)
@@ -71,14 +70,16 @@ function* newMerchant ({ payload }) {
 
 function* deleteMerchant ({ payload }) {
   try{     
-    console.log('dsss')
-    const getMerchants = state => JSON.parse(state.main.merchants)
-    const merchants = yield select(getMerchants)
-    const delIdx = merchants.findIndex(item => item.id === payload.id)
-    const newUpdateData = immutableSplice(merchants, delIdx, 1)    
-    localStorage.setItem('main',JSON.stringify(newUpdateData))
-    yield put({type:'DELETE_MERCHANT_DONE',payload: newUpdateData})
-    window.location.reload()
+    const response = confirm('Sure to delete?')
+    if (response){
+      const getMerchants = state => JSON.parse(state.main.merchants)
+      const merchants = yield select(getMerchants)
+      const delIdx = merchants.findIndex(item => item.id === payload.id)
+      const newUpdateData = immutableSplice(merchants, delIdx, 1)    
+      localStorage.setItem('main',JSON.stringify(newUpdateData))
+      yield put({type:'DELETE_MERCHANT_DONE',payload: newUpdateData})
+      window.location.reload()
+    }
   }catch(e){
     console.log(e)
   }    
