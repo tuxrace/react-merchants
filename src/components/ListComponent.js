@@ -17,7 +17,7 @@ const ListComponent = ({ items, dispatch }) => (
       </tr>
     </thead>
     <tbody>          
-      {items.map((item, i) => (<tr key={i}><td><img className="round" src={item.avatarUrl}/></td><td><Link to={`/view/${item.id}`}>{item.firstName} {item.lastName}</Link> </td><td>  <Link to={`/edit/${item.id}`}> <EditIcon /></Link></td><td><a onClick={() => dispatch(deleteMerchantAction(item))}><TrashIcon /></a></td></tr>))}
+      {items.map((item, i) => (<tr key={i}><td><img className="round" src={item.avatarUrl}/></td><td><Link to={`/view/${item.id}`}>{item.firstName} {item.lastName}</Link> </td><td>  <Link to={`/edit/${item.id}`}> <EditIcon /></Link></td><td><a className="clickable" onClick={() => dispatch(deleteMerchantAction(item))}><TrashIcon /></a></td></tr>))}
     </tbody>
   </Table>
 )
