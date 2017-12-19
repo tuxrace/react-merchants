@@ -1,6 +1,6 @@
-# React Auto1
+# React Merchants
 
-> React coding execise for auto1
+> React merchants
 
 ## To run
 
