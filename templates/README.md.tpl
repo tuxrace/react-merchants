@@ -10,9 +10,6 @@ npm start
 open http://localhost:3004
 ```
 
-{{range recentRepos 10}}
-Name: {{.Name}}
-Description: {{.Description}}
-URL: {{.URL}})
-Stars: {{.Stargazers}}
+{{range rss "https://domain.tld/feed.xml" 5}}
+Published: {{humanize .PublishedAt}}
 {{end}}
