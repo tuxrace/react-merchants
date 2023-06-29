@@ -10,6 +10,6 @@ npm start
 open http://localhost:3004
 ```
 
-{{range rss "https://domain.tld/feed.xml" 5}}
+{{range rss "https://example.tumblr.com/rss" 5}}
 Published: {{humanize .PublishedAt}}
 {{end}}
